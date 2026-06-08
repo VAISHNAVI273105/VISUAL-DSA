@@ -2,131 +2,110 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
     min-height:100vh;
-
     background:linear-gradient(
         135deg,
-        #e0f7ff,
-        #b9ecff,
-        #8bdcff
+        #e6f7ff,
+        #d6f0ff,
+        #bde7ff
     );
-
-    color:#003566;
-
-    display:flex;
-    flex-direction:column;
 }
+
+/* HERO */
 
 .hero{
     text-align:center;
-    padding:70px 20px;
+    padding:80px 20px;
+}
+
+.hero-content{
+    max-width:800px;
+    margin:auto;
 }
 
 .hero h3{
-    color:#0077b6;
-    margin-bottom:15px;
+    color:#0284c7;
     font-size:1.2rem;
+    margin-bottom:15px;
 }
 
 .hero h1{
     font-size:4rem;
-    font-weight:700;
-    color:#023e8a;
+    color:#0369a1;
     margin-bottom:15px;
 }
 
 .hero p{
-    font-size:1.2rem;
-    color:#0a4d68;
+    font-size:1.15rem;
+    color:#475569;
+    line-height:1.8;
 }
 
+/* CARDS */
+
 .container{
-
-    width:90%;
     max-width:1200px;
-
     margin:auto;
-
+    padding:20px;
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:25px;
-
-    padding-bottom:50px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
 }
 
 .card{
-
-    text-decoration:none;
-
     background:white;
-
-    border-radius:20px;
-
-    padding:30px;
-
+    text-decoration:none;
+    padding:35px 25px;
+    border-radius:25px;
     text-align:center;
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,0.1);
-
-    transition:0.3s;
+    transition:0.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(2,132,199,0.25);
+}
 
-    transform:translateY(-8px);
-
-    box-shadow:
-    0 15px 35px rgba(0,119,182,0.25);
+.icon{
+    font-size:3rem;
+    margin-bottom:15px;
 }
 
 .card h2{
-
-    margin-bottom:15px;
-
-    color:#0077b6;
+    color:#0284c7;
+    margin-bottom:10px;
 }
 
 .card p{
-
-    color:#555;
+    color:#64748b;
+    line-height:1.6;
 }
 
+/* FOOTER */
+
 footer{
-
     text-align:center;
-
-    padding:20px;
-
-    margin-top:auto;
-
-    background:rgba(255,255,255,0.4);
-
-    backdrop-filter:blur(10px);
-
+    margin-top:70px;
+    padding:25px;
+    color:#334155;
     font-weight:500;
 }
 
-/* Mobile Responsive */
+/* MOBILE */
 
 @media(max-width:768px){
 
     .hero h1{
-        font-size:2.5rem;
+        font-size:2.7rem;
     }
 
     .hero p{
         font-size:1rem;
     }
 
-    .container{
-        width:95%;
-    }
 }
