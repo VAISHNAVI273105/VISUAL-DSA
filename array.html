@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Array Visualizer | DSA Visualizer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/array.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            <i class="fa-solid fa-cubes"></i>
+            DSA Visualizer
+        </div>
+
+        <div class="page-title">
+            <h1>Array Visualizer</h1>
+            <p>Learn Array Operations through Visualization</p>
+        </div>
+
+    </header>
+
+    <!-- THEORY -->
+
+    <section class="theory-card">
+
+        <h2>
+            <i class="fa-solid fa-book-open"></i>
+            What is an Array?
+        </h2>
+
+        <p>
+            Array is a linear data structure used to store multiple elements
+            of the same datatype in contiguous memory locations.
+        </p>
+
+        <div class="theory-grid">
+
+            <div class="info-box">
+                <h3>Advantages</h3>
+
+                <ul>
+                    <li>Fast access using index</li>
+                    <li>Easy traversal</li>
+                    <li>Simple implementation</li>
+                    <li>Memory efficient</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Disadvantages</h3>
+
+                <ul>
+                    <li>Fixed size</li>
+                    <li>Insertion is costly</li>
+                    <li>Deletion requires shifting</li>
+                    <li>Memory wastage possible</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Applications</h3>
+
+                <ul>
+                    <li>Searching</li>
+                    <li>Sorting</li>
+                    <li>Matrices</li>
+                    <li>Dynamic Programming</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- OPERATIONS -->
+
+    <section class="control-card">
+
+        <h2>
+            <i class="fa-solid fa-sliders"></i>
+            Operations Panel
+        </h2>
+
+        <div class="input-section">
+
+            <input type="number"
+                id="value"
+                placeholder="Enter Value">
+
+            <input type="number"
+                id="index"
+                placeholder="Enter Index">
+
+        </div>
+
+        <div class="button-grid">
+
+            <button onclick="insertEnd()">
+                <i class="fa-solid fa-plus"></i>
+                Insert End
+            </button>
+
+            <button onclick="insertAtPosition()">
+                <i class="fa-solid fa-location-dot"></i>
+                Insert Position
+            </button>
+
+            <button onclick="deleteByIndex()">
+                <i class="fa-solid fa-trash"></i>
+                Delete
+            </button>
+
+            <button onclick="updateElement()">
+                <i class="fa-solid fa-pen"></i>
+                Update
+            </button>
+
+            <button onclick="searchElement()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+            </button>
+
+            <button onclick="traverseArray()">
+                <i class="fa-solid fa-arrows-left-right"></i>
+                Traverse
+            </button>
+
+            <button onclick="reverseArray()">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reverse
+            </button>
+
+            <button onclick="sortArray()">
+                <i class="fa-solid fa-arrow-down-wide-short"></i>
+                Sort
+            </button>
+
+            <button onclick="findMax()">
+                <i class="fa-solid fa-arrow-up"></i>
+                Max
+            </button>
+
+            <button onclick="findMin()">
+                <i class="fa-solid fa-arrow-down"></i>
+                Min
+            </button>
+
+            <button onclick="findSum()">
+                <i class="fa-solid fa-calculator"></i>
+                Sum
+            </button>
+
+            <button onclick="findAverage()">
+                <i class="fa-solid fa-chart-line"></i>
+                Average
+            </button>
+
+            <button onclick="generateRandomArray()">
+                <i class="fa-solid fa-dice"></i>
+                Random
+            </button>
+
+            <button onclick="clearArray()">
+                <i class="fa-solid fa-broom"></i>
+                Clear
+            </button>
+
+            <button onclick="linearSearchAnimation()">
+                <i class="fa-solid fa-search"></i>
+                Linear Search
+            </button>
+
+            <button onclick="binarySearchAnimation()">
+                <i class="fa-solid fa-binoculars"></i>
+                Binary Search
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- VISUALIZATION -->
+
+    <section class="visualizer-card">
+
+        <div class="visual-header">
+
+            <h2>
+                <i class="fa-solid fa-eye"></i>
+                Visualization Area
+            </h2>
+
+            <div id="size-display">
+                Size : 0
+            </div>
+
+        </div>
+
+        <div id="array-container">
+
+        </div>
+
+    </section>
+
+    <!-- RESULT -->
+
+    <section class="result-card">
+
+        <h2>
+            <i class="fa-solid fa-circle-info"></i>
+            Result
+        </h2>
+
+        <div id="result">
+            Perform any operation...
+        </div>
+
+    </section>
+
+    <!-- TIME COMPLEXITY -->
+
+    <section class="complexity-card">
+
+        <h2>
+            <i class="fa-solid fa-clock"></i>
+            Time Complexity
+        </h2>
+
+        <div id="complexity-result">
+            Select an operation to view complexity.
+        </div>
+
+    </section>
+
+    <!-- JAVA CODE -->
+
+    <section class="code-card">
+
+        <h2>
+            <i class="fa-solid fa-code"></i>
+            Java Code Reference
+        </h2>
+
+<pre id="code-viewer">
+int[] arr = {10,20,30,40};
+
+for(int i=0;i&lt;arr.length;i++)
+{
+    System.out.println(arr[i]);
+}
+</pre>
+
+    </section>
+
+    <!-- INTERVIEW QUESTIONS -->
+
+    <section class="question-card">
+
+        <h2>
+            <i class="fa-solid fa-circle-question"></i>
+            Interview Questions
+        </h2>
+
+        <ul>
+
+            <li>What is an Array?</li>
+
+            <li>Difference between Array and Linked List?</li>
+
+            <li>Why is insertion O(n)?</li>
+
+            <li>How is memory allocated in arrays?</li>
+
+            <li>What are multidimensional arrays?</li>
+
+            <li>Can arrays store different datatypes?</li>
+
+            <li>What is array traversal?</li>
+
+            <li>Explain linear search and binary search.</li>
+
+        </ul>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>
+            Made with ❤️ by Vaishnavi M & Shivani Stalin
+        </p>
+    </footer>
+
+    <script src="../js/array.js"></script>
+
+</body>
+
+</html>

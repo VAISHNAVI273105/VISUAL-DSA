@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List Visualizer | DSA Visualizer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="linkedlist.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            <i class="fa-solid fa-link"></i>
+            DSA Visualizer
+        </div>
+
+        <div class="page-title">
+            <h1>Linked List Visualizer</h1>
+            <p>Learn Linked Lists through Interactive Visualization</p>
+        </div>
+
+    </header>
+
+    <!-- THEORY -->
+
+    <section class="theory-card">
+
+        <h2>
+            <i class="fa-solid fa-book-open"></i>
+            What is a Linked List?
+        </h2>
+
+        <p>
+            A Linked List is a linear data structure where elements are stored
+            in nodes. Each node contains data and a reference to the next node.
+        </p>
+
+        <div class="theory-grid">
+
+            <div class="info-box">
+                <h3>Advantages</h3>
+
+                <ul>
+                    <li>Dynamic Size</li>
+                    <li>Efficient Insertions</li>
+                    <li>Efficient Deletions</li>
+                    <li>No Memory Wastage</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Disadvantages</h3>
+
+                <ul>
+                    <li>No Random Access</li>
+                    <li>Extra Pointer Memory</li>
+                    <li>Traversal Required</li>
+                    <li>Complex Implementation</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>Applications</h3>
+
+                <ul>
+                    <li>Dynamic Memory Allocation</li>
+                    <li>Stack Implementation</li>
+                    <li>Queue Implementation</li>
+                    <li>Graph Representation</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTROL PANEL -->
+
+    <section class="control-card">
+
+        <h2>
+            <i class="fa-solid fa-sliders"></i>
+            Operations Panel
+        </h2>
+
+        <div class="input-section">
+
+            <input
+                type="number"
+                id="valueInput"
+                placeholder="Enter Value">
+
+            <input
+                type="number"
+                id="positionInput"
+                placeholder="Enter Position">
+
+        </div>
+
+        <div class="button-grid">
+
+            <button onclick="insertStart()">
+                Insert First
+            </button>
+
+            <button onclick="insertEnd()">
+                Insert Last
+            </button>
+
+            <button onclick="insertPosition()">
+                Insert Position
+            </button>
+
+            <button onclick="deleteStart()">
+                Delete First
+            </button>
+
+            <button onclick="deleteEnd()">
+                Delete Last
+            </button>
+
+            <button onclick="deletePosition()">
+                Delete Position
+            </button>
+
+            <button onclick="searchNode()">
+                Search
+            </button>
+
+            <button onclick="reverseList()">
+                Reverse
+            </button>
+
+            <button onclick="traverseList()">
+                Traverse
+            </button>
+
+            <button onclick="clearList()">
+                Clear
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- VISUALIZATION -->
+
+    <section class="visualizer-card">
+
+        <div class="visual-header">
+
+            <h2>
+                <i class="fa-solid fa-eye"></i>
+                Visualization Area
+            </h2>
+
+            <div id="count">
+                Nodes : 0
+            </div>
+
+        </div>
+
+        <div class="head-node">
+            HEAD
+        </div>
+
+        <div id="linkedListContainer">
+
+        </div>
+
+    </section>
+
+    <!-- RESULT -->
+
+    <section class="result-card">
+
+        <h2>
+            <i class="fa-solid fa-circle-info"></i>
+            Current Operation
+        </h2>
+
+        <div id="operation">
+            Waiting for operation...
+        </div>
+
+    </section>
+
+    <!-- COMPLEXITY -->
+
+    <section class="complexity-card">
+
+        <h2>
+            <i class="fa-solid fa-clock"></i>
+            Time Complexity
+        </h2>
+
+        <div id="complexity">
+            Select an operation.
+        </div>
+
+    </section>
+
+    <!-- HISTORY -->
+
+    <section class="history-card">
+
+        <h2>
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            Operation History
+        </h2>
+
+        <div id="history">
+            No operations yet
+        </div>
+
+    </section>
+
+    <!-- EXPLANATION -->
+
+    <section class="learning-card">
+
+        <h2>
+            <i class="fa-solid fa-graduation-cap"></i>
+            Linked List Explanation
+        </h2>
+
+        <div id="steps">
+
+            A linked list stores data in nodes.
+
+            <br><br>
+
+            Each node contains:
+
+            <ul>
+                <li>Data Field</li>
+                <li>Next Pointer</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- JAVA CODE -->
+
+    <section class="code-card">
+
+        <h2>
+            <i class="fa-solid fa-code"></i>
+            Java Code Reference
+        </h2>
+
+<pre id="code-viewer">
+class Node{
+    int data;
+    Node next;
+
+    Node(int data){
+        this.data=data;
+        this.next=null;
+    }
+}
+</pre>
+
+    </section>
+
+    <!-- INTERVIEW QUESTIONS -->
+
+    <section class="question-card">
+
+        <h2>
+            <i class="fa-solid fa-circle-question"></i>
+            Interview Questions
+        </h2>
+
+        <ul>
+
+            <li>What is a Linked List?</li>
+
+            <li>Array vs Linked List?</li>
+
+            <li>What is a Node?</li>
+
+            <li>Why use Linked Lists?</li>
+
+            <li>What is the difference between Singly and Doubly Linked List?</li>
+
+        </ul>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Made with ❤️ by Vaishnavi M & Shivani Stalin
+        </p>
+
+    </footer>
+
+    <script src="linkedlist.js"></script>
+
+</body>
+
+</html>

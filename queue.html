@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Queue Visualizer - VisualDSA</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#fff0f5,#ffe4ec,#ffd6e7);
+padding:20px;
+color:#5a2a42;
+}
+
+h1{
+text-align:center;
+font-size:40px;
+color:#d63384;
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#d63384;
+margin-bottom:10px;
+}
+
+input{
+width:250px;
+padding:12px;
+border:2px solid #ff69b4;
+border-radius:10px;
+outline:none;
+}
+
+button{
+padding:10px 15px;
+margin:5px;
+border:none;
+border-radius:10px;
+background:#ff69b4;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#ff1493;
+transform:scale(1.05);
+}
+
+#message{
+font-size:18px;
+font-weight:bold;
+line-height:1.7;
+color:#8b004f;
+}
+
+.queue-container{
+display:flex;
+gap:10px;
+padding:20px;
+min-height:140px;
+border:3px dashed #ff69b4;
+border-radius:15px;
+background:#fff5fa;
+overflow-x:auto;
+}
+
+.queue-item{
+width:80px;
+height:80px;
+background:linear-gradient(135deg,#ffb6c1,#ff69b4);
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:22px;
+font-weight:bold;
+border-radius:15px;
+animation:slide .4s ease;
+}
+
+@keyframes slide{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table,th,td{
+border:1px solid #ddd;
+}
+
+th{
+background:#ff69b4;
+color:white;
+}
+
+th,td{
+padding:10px;
+text-align:center;
+}
+
+ul,ol{
+padding-left:25px;
+line-height:2;
+}
+
+.label{
+font-size:18px;
+font-weight:bold;
+color:#d63384;
+margin-bottom:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>💖 Queue Visualizer 💖</h1>
+
+<div class="card">
+
+<h2>What is Queue?</h2>
+
+<p>
+Queue is a Linear Data Structure that follows
+<b>FIFO (First In First Out)</b>.
+The element inserted first will be removed first.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Advantages</h2>
+
+<ul>
+<li>Fast insertion at Rear</li>
+<li>Fast deletion at Front</li>
+<li>Useful in scheduling systems</li>
+<li>Easy FIFO processing</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Disadvantages</h2>
+
+<ul>
+<li>No random access</li>
+<li>Searching takes O(n)</li>
+<li>Can waste memory in array implementation</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Queue Operations</h2>
+
+<input
+type="number"
+id="value"
+placeholder="Enter Element">
+
+<br><br>
+
+<button onclick="enqueue()">Enqueue</button>
+
+<button onclick="dequeue()">Dequeue</button>
+
+<button onclick="frontElement()">Front</button>
+
+<button onclick="rearElement()">Rear</button>
+
+<button onclick="queueSize()">Size</button>
+
+<button onclick="isEmpty()">Is Empty</button>
+
+<button onclick="traverseQueue()">Traverse</button>
+
+<button onclick="searchElement()">Search</button>
+
+<button onclick="clearQueue()">Clear</button>
+
+</div>
+
+<div class="card">
+
+<h2>Operation Explanation</h2>
+
+<p id="message">
+
+Click any operation button to understand what happens inside the Queue.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Visualization</h2>
+
+<div class="label">
+FRONT ➜ ➜ ➜ ➜ REAR
+</div>
+
+<div id="queue" class="queue-container"></div>
+
+</div>
+
+<div class="card">
+
+<h2>Time Complexity</h2>
+
+<table>
+
+<tr>
+<th>Operation</th>
+<th>Complexity</th>
+</tr>
+
+<tr>
+<td>Enqueue</td>
+<td>O(1)</td>
+</tr>
+
+<tr>
+<td>Dequeue</td>
+<td>O(1)</td>
+</tr>
+
+<tr>
+<td>Front</td>
+<td>O(1)</td>
+</tr>
+
+<tr>
+<td>Rear</td>
+<td>O(1)</td>
+</tr>
+
+<tr>
+<td>Search</td>
+<td>O(n)</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>Top Interview Questions</h2>
+
+<ol>
+
+<li>What is FIFO?</li>
+
+<li>Difference between Stack and Queue?</li>
+
+<li>What is Circular Queue?</li>
+
+<li>What is Priority Queue?</li>
+
+<li>Where are Queues used in real life?</li>
+
+</ol>
+
+</div>
+
+<script>
+
+let queue=[];
+
+function renderQueue(){
+
+let container=document.getElementById("queue");
+
+container.innerHTML="";
+
+queue.forEach(item=>{
+
+let box=document.createElement("div");
+
+box.className="queue-item";
+
+box.innerHTML=item;
+
+container.appendChild(box);
+
+});
+
+}
+
+function showMessage(text){
+
+document.getElementById("message").innerHTML=text;
+
+}
+
+function enqueue(){
+
+let value=document.getElementById("value").value;
+
+if(value===""){
+
+showMessage("⚠ Please enter a value before Enqueue.");
+
+return;
+
+}
+
+queue.push(value);
+
+showMessage(
+"✅ ENQUEUE: "+value+
+" inserted at the REAR of the queue. FIFO rule is maintained."
+);
+
+renderQueue();
+
+document.getElementById("value").value="";
+
+}
+
+function dequeue(){
+
+if(queue.length===0){
+
+showMessage(
+"❌ DEQUEUE failed because Queue is Empty (Underflow)."
+);
+
+return;
+
+}
+
+let removed=queue.shift();
+
+showMessage(
+"✅ DEQUEUE: "+removed+
+" removed from the FRONT of the queue."
+);
+
+renderQueue();
+
+}
+
+function frontElement(){
+
+if(queue.length===0){
+
+showMessage("Queue is Empty.");
+
+return;
+
+}
+
+showMessage(
+"👉 FRONT Element = "+queue[0]
+);
+
+}
+
+function rearElement(){
+
+if(queue.length===0){
+
+showMessage("Queue is Empty.");
+
+return;
+
+}
+
+showMessage(
+"👉 REAR Element = "+queue[queue.length-1]
+);
+
+}
+
+function queueSize(){
+
+showMessage(
+"📏 Queue Size = "+queue.length
+);
+
+}
+
+function isEmpty(){
+
+if(queue.length===0){
+
+showMessage(
+"✅ Queue is Empty."
+);
+
+}
+else{
+
+showMessage(
+"❌ Queue is NOT Empty."
+);
+
+}
+
+}
+
+function traverseQueue(){
+
+if(queue.length===0){
+
+showMessage("Queue is Empty.");
+
+return;
+
+}
+
+showMessage(
+"🔄 Traversing Queue: "+
+queue.join(" ➜ ")
+);
+
+}
+
+function searchElement(){
+
+let val=prompt("Enter element to search");
+
+if(val===null) return;
+
+if(queue.includes(val)){
+
+showMessage(
+"✅ Element "+val+
+" found in Queue."
+);
+
+}
+else{
+
+showMessage(
+"❌ Element "+val+
+" not found in Queue."
+);
+
+}
+
+}
+
+function clearQueue(){
+
+queue=[];
+
+renderQueue();
+
+showMessage(
+"🗑 Queue Cleared Successfully."
+);
+
+}
+<!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Made with ❤️ by Vaishnavi M & Shivani Stalin
+        </p>
+
+    </footer>
+
+
+</script>
+
+</body>
+</html>

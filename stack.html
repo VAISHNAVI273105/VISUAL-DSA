@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Stack Visualizer</title>
+
+<link rel="stylesheet"
+href="stack.css">
+
+</head>
+
+<body>
+
+<h1>💜 STACK VISUALIZER 💜</h1>
+
+<!-- WHAT IS STACK -->
+
+<div class="card">
+
+<h2>What is Stack?</h2>
+
+<p>
+
+Stack is a Linear Data Structure that follows
+
+<b>LIFO (Last In First Out)</b>.
+
+The last inserted element will be removed first.
+
+</p>
+
+</div>
+
+<!-- ADVANTAGES -->
+
+<div class="card">
+
+<h2>Advantages</h2>
+
+<ul>
+
+<li>Fast Insertion</li>
+
+<li>Fast Deletion</li>
+
+<li>Easy Memory Management</li>
+
+<li>Used in Function Calls</li>
+
+</ul>
+
+</div>
+
+<!-- DISADVANTAGES -->
+
+<div class="card">
+
+<h2>Disadvantages</h2>
+
+<ul>
+
+<li>No Random Access</li>
+
+<li>Overflow Possible</li>
+
+<li>Limited Size</li>
+
+</ul>
+
+</div>
+
+<!-- OPERATIONS -->
+
+<div class="card">
+
+<h2>Stack Operations</h2>
+
+<input
+type="number"
+id="value"
+placeholder="Enter Element">
+
+<br><br>
+
+<button onclick="pushElement()">
+
+Push
+
+</button>
+
+<button onclick="popElement()">
+
+Pop
+
+</button>
+
+<button onclick="peekElement()">
+
+Peek
+
+</button>
+
+<button onclick="stackSize()">
+
+Size
+
+</button>
+
+<button onclick="isEmpty()">
+
+Is Empty
+
+</button>
+
+<button onclick="traverseStack()">
+
+Traverse
+
+</button>
+
+<button onclick="searchElement()">
+
+Search
+
+</button>
+
+<button onclick="clearStack()">
+
+Clear
+
+</button>
+
+</div>
+
+<!-- EXPLANATION -->
+
+<div class="card">
+
+<h2>Operation Explanation</h2>
+
+<p id="message">
+
+Click any operation button to understand
+what is happening inside the Stack.
+
+</p>
+
+</div>
+
+<!-- VISUALIZATION -->
+
+<div class="card">
+
+<h2>Visualization</h2>
+
+<div class="top-label">
+
+TOP
+
+</div>
+
+<div
+id="stack"
+class="stack-container">
+
+</div>
+
+</div>
+
+<!-- COMPLEXITY -->
+
+<div class="card">
+
+<h2>Time Complexity</h2>
+
+<table>
+
+<tr>
+
+<th>Operation</th>
+
+<th>Complexity</th>
+
+</tr>
+
+<tr>
+
+<td>Push</td>
+
+<td>O(1)</td>
+
+</tr>
+
+<tr>
+
+<td>Pop</td>
+
+<td>O(1)</td>
+
+</tr>
+
+<tr>
+
+<td>Peek</td>
+
+<td>O(1)</td>
+
+</tr>
+
+<tr>
+
+<td>Search</td>
+
+<td>O(n)</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- INTERVIEW QUESTIONS -->
+
+<div class="card">
+
+<h2>Top Interview Questions</h2>
+
+<ol>
+
+<li>What is LIFO?</li>
+
+<li>Difference between Stack and Queue?</li>
+
+<li>Applications of Stack?</li>
+
+<li>What is Stack Overflow?</li>
+
+<li>Implement Stack using Linked List.</li>
+
+</ol>
+
+</div>
+<!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Made with ❤️ by Vaishnavi M & Shivani Stalin
+        </p>
+
+    </footer>
+
+
+<script src="stack.js"></script>
+
+</body>
+
+</html>
