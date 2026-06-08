@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrayList Visualizer | DSA Visualizer</title>
+
+    <link rel="stylesheet" href="arraylist.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="hero">
+        <h1>ArrayList Visualizer</h1>
+        <p>Learn ArrayList Operations Interactively with Animations</p>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="container">
+
+        <!-- CONTROL PANEL -->
+        <section class="control-panel">
+
+            <h2>Operations</h2>
+
+            <div class="input-group">
+                <input type="number" id="valueInput" placeholder="Enter Value">
+                <input type="number" id="indexInput" placeholder="Enter Index">
+            </div>
+
+            <div class="button-grid">
+
+                <button onclick="addEnd()">Add End</button>
+                <button onclick="addBeginning()">Add Beginning</button>
+                <button onclick="addAtIndex()">Add At Index</button>
+
+                <button onclick="removeFirst()">Remove First</button>
+                <button onclick="removeLast()">Remove Last</button>
+                <button onclick="removeIndex()">Remove Index</button>
+
+                <button onclick="updateElement()">Update</button>
+                <button onclick="searchElement()">Search</button>
+                <button onclick="traverseArray()">Traverse</button>
+
+                <button onclick="generateRandom()">Random Data</button>
+                <button onclick="showSize()">Show Size</button>
+                <button onclick="clearArray()">Clear</button>
+
+            </div>
+
+        </section>
+
+        <!-- INFO CARDS -->
+        <section class="stats-section">
+
+            <div class="stat-card">
+                <h3>Size</h3>
+                <p id="sizeDisplay">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Capacity</h3>
+                <p id="capacityDisplay">10</p>
+            </div>
+
+        </section>
+
+        <!-- VISUALIZATION -->
+        <section class="visualizer-section">
+
+            <h2>Visualization</h2>
+
+            <div id="arrayContainer" class="array-container">
+
+            </div>
+
+        </section>
+
+        <!-- OUTPUT -->
+        <section class="output-section">
+
+            <h2>Operation Output</h2>
+
+            <div id="messageBox">
+                Ready...
+            </div>
+
+        </section>
+
+        <!-- COMPLEXITY -->
+        <section class="complexity-section">
+
+            <h2>Time Complexity</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Complexity</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Add End</td>
+                        <td>O(1)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Add At Index</td>
+                        <td>O(n)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Delete</td>
+                        <td>O(n)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Search</td>
+                        <td>O(n)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Access</td>
+                        <td>O(1)</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- JAVA CODE -->
+        <section class="code-section">
+
+            <h2>Java ArrayList Example</h2>
+
+<pre>
+ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+
+list.add(10);
+list.add(20);
+
+list.add(1,15);
+
+list.remove(0);
+
+System.out.println(list);
+</pre>
+
+        </section>
+
+        <!-- HISTORY -->
+        <section class="history-section">
+
+            <h2>Operation History</h2>
+
+            <ul id="historyList">
+
+            </ul>
+
+        </section>
+
+        <!-- THEORY -->
+        <section class="theory-section">
+
+            <h2>What is ArrayList?</h2>
+
+            <p>
+                ArrayList is a dynamic array in Java that can grow and shrink
+                automatically. Unlike normal arrays, its size is flexible.
+            </p>
+
+            <ul>
+                <li>Dynamic Size</li>
+                <li>Fast Random Access</li>
+                <li>Stores Ordered Elements</li>
+                <li>Allows Duplicates</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Made by Vaishnavi M ❤️</p>
+    </footer>
+
+    <script src="arraylist.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#1e293b;
+    min-height:100vh;
+    line-height:1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(135deg,#4f46e5,#6366f1);
+    color:white;
+    box-shadow:0 4px 20px rgba(0,0,0,0.1);
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:1.1rem;
+    opacity:0.95;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* =========================
+   SECTION COMMON
+========================= */
+
+section{
+    background:white;
+    margin-bottom:25px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+section h2{
+    margin-bottom:20px;
+    color:#4f46e5;
+}
+
+/* =========================
+   CONTROL PANEL
+========================= */
+
+.input-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.input-group input{
+    flex:1;
+    min-width:180px;
+    padding:14px;
+    border:2px solid #e2e8f0;
+    border-radius:12px;
+    font-size:15px;
+    outline:none;
+    transition:0.3s;
+}
+
+.input-group input:focus{
+    border-color:#6366f1;
+}
+
+.button-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.button-grid button{
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#4f46e5;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.button-grid button:hover{
+    transform:translateY(-3px);
+    background:#4338ca;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-section{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.stat-card{
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    background:linear-gradient(
+    135deg,
+    #eef2ff,
+    #ffffff
+    );
+}
+
+.stat-card h3{
+    color:#6366f1;
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    font-size:2rem;
+    font-weight:700;
+}
+
+/* =========================
+   VISUALIZER
+========================= */
+
+.array-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    min-height:160px;
+    justify-content:center;
+    align-items:flex-start;
+    padding:20px;
+}
+
+.array-box{
+    width:90px;
+    height:90px;
+    background:#6366f1;
+    color:white;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.3rem;
+    font-weight:bold;
+    position:relative;
+    transition:0.3s;
+    animation:pop 0.4s ease;
+}
+
+.array-box:hover{
+    transform:scale(1.08);
+}
+
+.index{
+    position:absolute;
+    bottom:-25px;
+    font-size:13px;
+    color:#64748b;
+    font-weight:600;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.highlight{
+    background:#22c55e !important;
+}
+
+.delete{
+    background:#ef4444 !important;
+}
+
+.search{
+    background:#f59e0b !important;
+}
+
+@keyframes pop{
+    from{
+        transform:scale(0);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* =========================
+   OUTPUT BOX
+========================= */
+
+#messageBox{
+    background:#eef2ff;
+    padding:20px;
+    border-radius:12px;
+    font-weight:500;
+    color:#1e293b;
+}
+
+/* =========================
+   COMPLEXITY TABLE
+========================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+th{
+    background:#4f46e5;
+    color:white;
+}
+
+th,
+td{
+    padding:15px;
+    text-align:center;
+    border:1px solid #e5e7eb;
+}
+
+tr:nth-child(even){
+    background:#f8fafc;
+}
+
+/* =========================
+   CODE SECTION
+========================= */
+
+pre{
+    background:#0f172a;
+    color:#38bdf8;
+    padding:20px;
+    border-radius:12px;
+    overflow-x:auto;
+    font-size:14px;
+}
+
+/* =========================
+   HISTORY
+========================= */
+
+#historyList{
+    list-style:none;
+}
+
+#historyList li{
+    padding:12px;
+    margin-bottom:10px;
+    background:#eef2ff;
+    border-left:5px solid #6366f1;
+    border-radius:10px;
+}
+
+/* =========================
+   THEORY
+========================= */
+
+.theory-section p{
+    margin-bottom:15px;
+}
+
+.theory-section ul{
+    margin-left:20px;
+}
+
+.theory-section li{
+    margin-bottom:8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    margin-top:40px;
+    padding:25px;
+    text-align:center;
+    background:#4f46e5;
+    color:white;
+    font-weight:600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2rem;
+}
+
+.button-grid{
+    grid-template-columns:1fr;
+}
+
+.array-box{
+    width:70px;
+    height:70px;
+    font-size:1rem;
+}
+
+}
