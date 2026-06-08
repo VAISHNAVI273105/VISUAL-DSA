@@ -2,152 +2,258 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArrayList Visualizer | DSA Visualizer</title>
 
-    <link rel="stylesheet" href="arraylist.css">
+    <title>ArrayList Visualizer | DSA Visualizer</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="arraylist.css">
+
 </head>
 
 <body>
 
     <!-- HEADER -->
-    <header class="hero">
-        <h1>ArrayList Visualizer</h1>
-        <p>Learn ArrayList Operations Interactively with Animations</p>
+
+    <header class="header">
+
+        <div class="logo">
+            <i class="fa-solid fa-list"></i>
+            DSA Visualizer
+        </div>
+
+        <div class="page-title">
+            <h1>ArrayList Visualizer</h1>
+            <p>Learn ArrayList Operations through Visualization</p>
+        </div>
+
     </header>
 
-    <!-- MAIN CONTAINER -->
-    <main class="container">
+    <!-- THEORY -->
 
-        <!-- CONTROL PANEL -->
-        <section class="control-panel">
+    <section class="theory-card">
 
-            <h2>Operations</h2>
+        <h2>
+            <i class="fa-solid fa-book-open"></i>
+            What is an ArrayList?
+        </h2>
 
-            <div class="input-group">
-                <input type="number" id="valueInput" placeholder="Enter Value">
-                <input type="number" id="indexInput" placeholder="Enter Index">
-            </div>
+        <p>
+            ArrayList is a dynamic array implementation in Java that can grow
+            and shrink automatically. Unlike normal arrays, ArrayList size is
+            not fixed.
+        </p>
 
-            <div class="button-grid">
+        <div class="theory-grid">
 
-                <button onclick="addEnd()">Add End</button>
-                <button onclick="addBeginning()">Add Beginning</button>
-                <button onclick="addAtIndex()">Add At Index</button>
+            <div class="info-box">
 
-                <button onclick="removeFirst()">Remove First</button>
-                <button onclick="removeLast()">Remove Last</button>
-                <button onclick="removeIndex()">Remove Index</button>
+                <h3>Advantages</h3>
 
-                <button onclick="updateElement()">Update</button>
-                <button onclick="searchElement()">Search</button>
-                <button onclick="traverseArray()">Traverse</button>
-
-                <button onclick="generateRandom()">Random Data</button>
-                <button onclick="showSize()">Show Size</button>
-                <button onclick="clearArray()">Clear</button>
+                <ul>
+                    <li>Dynamic Size</li>
+                    <li>Fast Random Access</li>
+                    <li>Easy Traversal</li>
+                    <li>Flexible Storage</li>
+                </ul>
 
             </div>
 
-        </section>
+            <div class="info-box">
 
-        <!-- INFO CARDS -->
-        <section class="stats-section">
+                <h3>Disadvantages</h3>
 
-            <div class="stat-card">
-                <h3>Size</h3>
-                <p id="sizeDisplay">0</p>
-            </div>
-
-            <div class="stat-card">
-                <h3>Capacity</h3>
-                <p id="capacityDisplay">10</p>
-            </div>
-
-        </section>
-
-        <!-- VISUALIZATION -->
-        <section class="visualizer-section">
-
-            <h2>Visualization</h2>
-
-            <div id="arrayContainer" class="array-container">
+                <ul>
+                    <li>Insertion Costly in Middle</li>
+                    <li>Deletion Requires Shifting</li>
+                    <li>Extra Memory Usage</li>
+                    <li>Slower than Arrays</li>
+                </ul>
 
             </div>
 
-        </section>
+            <div class="info-box">
 
-        <!-- OUTPUT -->
-        <section class="output-section">
+                <h3>Applications</h3>
 
-            <h2>Operation Output</h2>
+                <ul>
+                    <li>Student Records</li>
+                    <li>Shopping Cart</li>
+                    <li>Playlist Systems</li>
+                    <li>Inventory Management</li>
+                </ul>
 
-            <div id="messageBox">
-                Ready...
             </div>
 
-        </section>
+        </div>
 
-        <!-- COMPLEXITY -->
-        <section class="complexity-section">
+    </section>
 
-            <h2>Time Complexity</h2>
+    <!-- OPERATIONS PANEL -->
 
-            <table>
+    <section class="control-card">
 
-                <thead>
-                    <tr>
-                        <th>Operation</th>
-                        <th>Complexity</th>
-                    </tr>
-                </thead>
+        <h2>
+            <i class="fa-solid fa-sliders"></i>
+            Operations Panel
+        </h2>
 
-                <tbody>
+        <div class="input-section">
 
-                    <tr>
-                        <td>Add End</td>
-                        <td>O(1)</td>
-                    </tr>
+            <input
+                type="number"
+                id="valueInput"
+                placeholder="Enter Value">
 
-                    <tr>
-                        <td>Add At Index</td>
-                        <td>O(n)</td>
-                    </tr>
+            <input
+                type="number"
+                id="indexInput"
+                placeholder="Enter Index">
 
-                    <tr>
-                        <td>Delete</td>
-                        <td>O(n)</td>
-                    </tr>
+        </div>
 
-                    <tr>
-                        <td>Search</td>
-                        <td>O(n)</td>
-                    </tr>
+        <div class="button-grid">
 
-                    <tr>
-                        <td>Access</td>
-                        <td>O(1)</td>
-                    </tr>
+            <button onclick="addEnd()">
+                Add End
+            </button>
 
-                </tbody>
+            <button onclick="addBeginning()">
+                Add Beginning
+            </button>
 
-            </table>
+            <button onclick="addAtIndex()">
+                Add At Index
+            </button>
 
-        </section>
+            <button onclick="removeFirst()">
+                Remove First
+            </button>
 
-        <!-- JAVA CODE -->
-        <section class="code-section">
+            <button onclick="removeLast()">
+                Remove Last
+            </button>
 
-            <h2>Java ArrayList Example</h2>
+            <button onclick="removeIndex()">
+                Remove Index
+            </button>
+
+            <button onclick="updateElement()">
+                Update
+            </button>
+
+            <button onclick="searchElement()">
+                Search
+            </button>
+
+            <button onclick="traverseArray()">
+                Traverse
+            </button>
+
+            <button onclick="generateRandom()">
+                Random
+            </button>
+
+            <button onclick="clearArray()">
+                Clear
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- VISUALIZATION -->
+
+    <section class="visualizer-card">
+
+        <div class="visual-header">
+
+            <h2>
+                <i class="fa-solid fa-eye"></i>
+                Visualization Area
+            </h2>
+
+            <div id="sizeBox">
+                Size : 0
+            </div>
+
+        </div>
+
+        <div id="arrayContainer">
+
+        </div>
+
+    </section>
+
+    <!-- RESULT -->
+
+    <section class="result-card">
+
+        <h2>
+            <i class="fa-solid fa-circle-info"></i>
+            Result
+        </h2>
+
+        <div id="messageBox">
+            Perform any operation...
+        </div>
+
+    </section>
+
+    <!-- TIME COMPLEXITY -->
+
+    <section class="complexity-card">
+
+        <h2>
+            <i class="fa-solid fa-clock"></i>
+            Time Complexity
+        </h2>
+
+        <div id="complexityBox">
+
+            Add End → O(1)
+
+            <br><br>
+
+            Add At Index → O(n)
+
+            <br><br>
+
+            Delete → O(n)
+
+            <br><br>
+
+            Search → O(n)
+
+            <br><br>
+
+            Access → O(1)
+
+        </div>
+
+    </section>
+
+    <!-- JAVA CODE -->
+
+    <section class="code-card">
+
+        <h2>
+            <i class="fa-solid fa-code"></i>
+            Java Code Reference
+        </h2>
 
 <pre>
-ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+ArrayList<Integer> list = new ArrayList<>();
 
 list.add(10);
+
 list.add(20);
 
 list.add(1,15);
@@ -157,43 +263,65 @@ list.remove(0);
 System.out.println(list);
 </pre>
 
-        </section>
+    </section>
 
-        <!-- HISTORY -->
-        <section class="history-section">
+    <!-- REAL WORLD APPLICATIONS -->
 
-            <h2>Operation History</h2>
+    <section class="application-card">
 
-            <ul id="historyList">
+        <h2>
+            Real World Applications of ArrayList
+        </h2>
 
-            </ul>
+        <ul>
 
-        </section>
+            <li>
+                <strong>Student Records:</strong>
+                Store dynamic student information.
+            </li>
 
-        <!-- THEORY -->
-        <section class="theory-section">
+            <li>
+                <strong>Shopping Cart:</strong>
+                Add or remove products dynamically.
+            </li>
 
-            <h2>What is ArrayList?</h2>
+            <li>
+                <strong>Music Playlist:</strong>
+                Maintain song collections.
+            </li>
 
-            <p>
-                ArrayList is a dynamic array in Java that can grow and shrink
-                automatically. Unlike normal arrays, its size is flexible.
-            </p>
+            <li>
+                <strong>Inventory Systems:</strong>
+                Manage stock items efficiently.
+            </li>
 
-            <ul>
-                <li>Dynamic Size</li>
-                <li>Fast Random Access</li>
-                <li>Stores Ordered Elements</li>
-                <li>Allows Duplicates</li>
-            </ul>
+            <li>
+                <strong>Employee Database:</strong>
+                Maintain employee records.
+            </li>
 
-        </section>
+        </ul>
 
-    </main>
+        <h2>Java Syntax</h2>
+
+<pre>
+ArrayList<String> names = new ArrayList<>();
+
+names.add("Vaishnavi");
+
+System.out.println(names);
+</pre>
+
+    </section>
 
     <!-- FOOTER -->
+
     <footer>
-        <p>Made by Vaishnavi M ❤️</p>
+
+        <p>
+            Made with ❤️ by Vaishnavi M & Shivani Stalin
+        </p>
+
     </footer>
 
     <script src="arraylist.js"></script>
