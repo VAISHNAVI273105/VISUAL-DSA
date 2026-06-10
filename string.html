@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Visualizer</title>
+    <link rel="stylesheet" href="string.css">
+</head>
+
+<body>
+
+    <h1>❤️ STRING VISUALIZER ❤️</h1>
+
+    <!-- Definition -->
+
+    <div class="card">
+
+        <h2>What is String?</h2>
+
+        <p>
+            A String is a sequence of characters stored together.
+            It is used to represent text such as names,
+            passwords, emails and messages.
+        </p>
+
+    </div>
+
+    <!-- Syntax -->
+
+    <div class="card">
+
+        <h2>Java String Syntax</h2>
+
+        <pre>
+String name = "Shivani";
+
+String str = new String("Hello");
+
+int len = name.length();
+
+char ch = name.charAt(0);
+        </pre>
+
+    </div>
+
+    <!-- Real Time Applications -->
+
+    <div class="card">
+
+        <h2>Real Time Applications</h2>
+
+        <ul>
+            <li>User Name Validation</li>
+            <li>Password Checking</li>
+            <li>Search Engines</li>
+            <li>Chat Applications</li>
+            <li>Email Processing</li>
+            <li>Text Editors</li>
+        </ul>
+
+    </div>
+
+    <!-- Operations -->
+
+    <div class="card">
+
+        <h2>String Operations</h2>
+
+        <input type="text"
+            id="stringInput"
+            placeholder="Enter String">
+
+        <br><br>
+
+        <button onclick="createString()">
+            Create
+        </button>
+
+        <button onclick="lengthString()">
+            Length
+        </button>
+
+        <button onclick="charAtString()">
+            CharAt
+        </button>
+
+        <button onclick="concatString()">
+            Concatenate
+        </button>
+
+        <button onclick="substringString()">
+            Substring
+        </button>
+
+        <button onclick="reverseString()">
+            Reverse
+        </button>
+
+        <button onclick="uppercaseString()">
+            Uppercase
+        </button>
+
+        <button onclick="lowercaseString()">
+            Lowercase
+        </button>
+
+        <button onclick="searchChar()">
+            Search
+        </button>
+
+        <button onclick="replaceChar()">
+            Replace
+        </button>
+
+        <button onclick="compareString()">
+            Compare
+        </button>
+
+        <button onclick="palindromeCheck()">
+            Palindrome
+        </button>
+
+        <button onclick="isNumeric()">
+            Is Numeric
+        </button>
+
+        <button onclick="sumDigits()">
+            Sum Digits
+        </button>
+
+        <button onclick="largestDigit()">
+            Largest Digit
+        </button>
+
+    </div>
+
+    <!-- Explanation -->
+
+    <div class="card">
+
+        <h2>Operation Explanation</h2>
+
+        <p id="message">
+
+            Click any operation to understand
+            what happens inside the String.
+
+        </p>
+
+    </div>
+
+    <!-- Visualization -->
+
+    <div class="card">
+
+        <h2>Visualization</h2>
+
+        <div id="visualization"
+            class="string-container">
+
+            Enter a string to visualize
+
+        </div>
+
+    </div>
+
+    <!-- Advantages -->
+
+    <div class="card">
+
+        <h2>Advantages</h2>
+
+        <ul>
+            <li>Easy Text Handling</li>
+            <li>Efficient Searching</li>
+            <li>Supports Manipulation</li>
+            <li>Widely Used</li>
+        </ul>
+
+    </div>
+
+    <!-- Disadvantages -->
+
+    <div class="card">
+
+        <h2>Disadvantages</h2>
+
+        <ul>
+            <li>Immutable in Java</li>
+            <li>Extra Memory Usage</li>
+            <li>Large Strings Can Be Slow</li>
+        </ul>
+
+    </div>
+
+    <!-- Complexity -->
+
+    <div class="card">
+
+        <h2>Time Complexity</h2>
+
+        <table>
+
+            <tr>
+                <th>Operation</th>
+                <th>Complexity</th>
+            </tr>
+
+            <tr>
+                <td>Length</td>
+                <td>O(1)</td>
+            </tr>
+
+            <tr>
+                <td>CharAt</td>
+                <td>O(1)</td>
+            </tr>
+
+            <tr>
+                <td>Search</td>
+                <td>O(n)</td>
+            </tr>
+
+            <tr>
+                <td>Reverse</td>
+                <td>O(n)</td>
+            </tr>
+
+            <tr>
+                <td>Substring</td>
+                <td>O(n)</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <script src="string.js"></script>
+
+</body>
+
+</html>
