@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>StringBuffer & StringBuilder Visualizer</title>
+
+<link rel="stylesheet"
+href="stringbuilderbuffer.css">
+
+</head>
+
+<body>
+
+<h1>💛 STRINGBUFFER & STRINGBUILDER VISUALIZER 💛</h1>
+
+<!-- STRINGBUFFER -->
+
+<div class="card">
+
+<h2>What is StringBuffer?</h2>
+
+<p>
+
+StringBuffer is a mutable sequence of characters.
+It is synchronized and thread-safe, making it suitable
+for multi-threaded applications.
+
+</p>
+
+</div>
+
+<!-- STRINGBUILDER -->
+
+<div class="card">
+
+<h2>What is StringBuilder?</h2>
+
+<p>
+
+StringBuilder is a mutable sequence of characters.
+It is not synchronized and is faster than StringBuffer.
+It is mainly used in single-threaded applications.
+
+</p>
+
+</div>
+
+<!-- JAVA SYNTAX -->
+
+<div class="card">
+
+<h2>Java Syntax</h2>
+
+<pre>
+
+StringBuffer sb1 =
+new StringBuffer("Hello");
+
+sb1.append(" Java");
+
+sb1.insert(5," World");
+
+StringBuilder sb2 =
+new StringBuilder("Hello");
+
+sb2.append(" Java");
+
+sb2.reverse();
+
+</pre>
+
+</div>
+
+<!-- COMMON PROPERTIES -->
+
+<div class="card">
+
+<h2>Common Properties</h2>
+
+<ul>
+
+<li>Mutable</li>
+
+<li>Dynamic in Size</li>
+
+<li>Supports Character Manipulation</li>
+
+<li>Provides Built-in Methods</li>
+
+<li>Can Modify Existing Data</li>
+
+</ul>
+
+</div>
+
+<!-- ADVANTAGES -->
+
+<div class="card">
+
+<h2>Advantages</h2>
+
+<h3>StringBuffer</h3>
+
+<ul>
+
+<li>Thread Safe</li>
+
+<li>Synchronized</li>
+
+<li>Secure for Multi-threading</li>
+
+</ul>
+
+<br>
+
+<h3>StringBuilder</h3>
+
+<ul>
+
+<li>Very Fast</li>
+
+<li>Better Performance</li>
+
+<li>Memory Efficient</li>
+
+</ul>
+
+</div>
+
+<!-- APPLICATIONS -->
+
+<div class="card">
+
+<h2>Real Time Applications</h2>
+
+<ul>
+
+<li>Text Editors</li>
+
+<li>Banking Systems</li>
+
+<li>Chat Applications</li>
+
+<li>Server Applications</li>
+
+<li>Dynamic Report Generation</li>
+
+<li>Data Formatting</li>
+
+<li>Competitive Programming</li>
+
+</ul>
+
+</div>
+
+<!-- DIFFERENCE -->
+
+<div class="card">
+
+<h2>Difference Between StringBuffer and StringBuilder</h2>
+
+<table>
+
+<tr>
+
+<th>Feature</th>
+<th>StringBuffer</th>
+<th>StringBuilder</th>
+
+</tr>
+
+<tr>
+
+<td>Thread Safe</td>
+<td>Yes</td>
+<td>No</td>
+
+</tr>
+
+<tr>
+
+<td>Synchronization</td>
+<td>Synchronized</td>
+<td>Not Synchronized</td>
+
+</tr>
+
+<tr>
+
+<td>Speed</td>
+<td>Slower</td>
+<td>Faster</td>
+
+</tr>
+
+<tr>
+
+<td>Multi-threading</td>
+<td>Suitable</td>
+<td>Not Suitable</td>
+
+</tr>
+
+<tr>
+
+<td>Introduced</td>
+<td>Java 1.0</td>
+<td>Java 1.5</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- INPUT -->
+
+<div class="card">
+
+<h2>Operations</h2>
+
+<input
+type="text"
+id="bufferInput"
+placeholder="Enter Text">
+
+<br><br>
+
+<button onclick="createText()">
+Create
+</button>
+
+<button onclick="appendText()">
+Append
+</button>
+
+<button onclick="insertText()">
+Insert
+</button>
+
+<button onclick="deleteText()">
+Delete
+</button>
+
+<button onclick="deleteCharText()">
+Delete Char
+</button>
+
+<button onclick="replaceText()">
+Replace
+</button>
+
+<button onclick="reverseText()">
+Reverse
+</button>
+
+<button onclick="lengthText()">
+Length
+</button>
+
+<button onclick="capacityText()">
+Capacity
+</button>
+
+<button onclick="charAtText()">
+CharAt
+</button>
+
+<button onclick="setCharText()">
+SetCharAt
+</button>
+
+<button onclick="substringText()">
+Substring
+</button>
+
+<button onclick="compareText()">
+Compare
+</button>
+
+<button onclick="searchText()">
+Search
+</button>
+
+<button onclick="clearText()">
+Clear
+</button>
+
+</div>
+
+<!-- EXPLANATION -->
+
+<div class="card">
+
+<h2>Operation Explanation</h2>
+
+<p id="message">
+
+Click any operation button to understand
+what is happening internally.
+
+</p>
+
+</div>
+
+<!-- VISUALIZATION -->
+
+<div class="card">
+
+<h2>Visualization</h2>
+
+<div
+id="visualization"
+class="buffer-container">
+
+Enter Text to Visualize
+
+</div>
+
+</div>
+
+<!-- COMPLEXITY -->
+
+<div class="card">
+
+<h2>Time Complexity</h2>
+
+<table>
+
+<tr>
+
+<th>Operation</th>
+<th>Complexity</th>
+
+</tr>
+
+<tr>
+
+<td>Append</td>
+<td>O(1)</td>
+
+</tr>
+
+<tr>
+
+<td>Insert</td>
+<td>O(n)</td>
+
+</tr>
+
+<tr>
+
+<td>Delete</td>
+<td>O(n)</td>
+
+</tr>
+
+<tr>
+
+<td>Search</td>
+<td>O(n)</td>
+
+</tr>
+
+<tr>
+
+<td>Reverse</td>
+<td>O(n)</td>
+
+</tr>
+
+<tr>
+
+<td>CharAt</td>
+<td>O(1)</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<script src="stringbuilderbuffer.js"></script>
+
+</body>
+
+</html>
