@@ -1,243 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>Stack Visualizer | DSA Visualizer</title>
 
-<title>Stack Visualizer</title>
-
-<link rel="stylesheet"
-href="stack.css">
-
+<link rel="stylesheet" href="stack.css">
 </head>
 
 <body>
 
-<h1>💜 STACK VISUALIZER 💜</h1>
+<!-- HEADER -->
+
+<header class="hero">
+
+<div class="hero-left">
+<h1>DSA Visualizer</h1>
+</div>
+
+<div class="hero-right">
+<h1>Stack Visualizer</h1>
+<p>Learn Stack Operations through Visualization</p>
+</div>
+
+</header>
 
 <!-- WHAT IS STACK -->
 
-<div class="card">
+<section class="card">
 
-<h2>What is Stack?</h2>
+<h2>What is a Stack?</h2>
 
 <p>
-
-Stack is a Linear Data Structure that follows
-
-<b>LIFO (Last In First Out)</b>.
-
-The last inserted element will be removed first.
-
+Stack is a linear data structure that follows
+<strong>LIFO (Last In First Out)</strong>.
+The last inserted element is removed first.
 </p>
 
-</div>
+<div class="info-grid">
 
-<!-- ADVANTAGES -->
-
-<div class="card">
-
-<h2>Advantages</h2>
-
+<div class="info-box">
+<h3>Advantages</h3>
 <ul>
-
-<li>Fast Insertion</li>
-
-<li>Fast Deletion</li>
-
-<li>Easy Memory Management</li>
-
-<li>Used in Function Calls</li>
-
+<li>Fast insertion</li>
+<li>Fast deletion</li>
+<li>Easy memory management</li>
+<li>Used in function calls</li>
 </ul>
-
 </div>
 
-<!-- DISADVANTAGES -->
-
-<div class="card">
-
-<h2>Disadvantages</h2>
-
+<div class="info-box">
+<h3>Disadvantages</h3>
 <ul>
-
-<li>No Random Access</li>
-
-<li>Overflow Possible</li>
-
-<li>Limited Size</li>
-
+<li>No random access</li>
+<li>Overflow possible</li>
+<li>Limited size</li>
 </ul>
+</div>
+
+<div class="info-box">
+<h3>Applications</h3>
+<ul>
+<li>Browser History</li>
+<li>Undo Operations</li>
+<li>Function Calls</li>
+<li>Expression Evaluation</li>
+</ul>
+</div>
 
 </div>
+
+</section>
 
 <!-- OPERATIONS -->
 
-<div class="card">
+<section class="card">
 
-<h2>Stack Operations</h2>
+<h2>Operations Panel</h2>
 
 <input
 type="number"
 id="value"
 placeholder="Enter Element">
 
-<br><br>
+<div class="button-group">
 
-<button onclick="pushElement()">
+<button onclick="pushElement()">Push</button>
 
-Push
+<button onclick="popElement()">Pop</button>
 
-</button>
+<button onclick="peekElement()">Peek</button>
 
-<button onclick="popElement()">
+<button onclick="stackSize()">Size</button>
 
-Pop
+<button onclick="isEmpty()">Is Empty</button>
 
-</button>
+<button onclick="traverseStack()">Traverse</button>
 
-<button onclick="peekElement()">
+<button onclick="searchElement()">Search</button>
 
-Peek
-
-</button>
-
-<button onclick="stackSize()">
-
-Size
-
-</button>
-
-<button onclick="isEmpty()">
-
-Is Empty
-
-</button>
-
-<button onclick="traverseStack()">
-
-Traverse
-
-</button>
-
-<button onclick="searchElement()">
-
-Search
-
-</button>
-
-<button onclick="clearStack()">
-
-Clear
-
-</button>
+<button onclick="clearStack()">Clear</button>
 
 </div>
 
+</section>
+
 <!-- EXPLANATION -->
 
-<div class="card">
+<section class="card">
 
 <h2>Operation Explanation</h2>
 
 <p id="message">
-
 Click any operation button to understand
-what is happening inside the Stack.
-
+what happens inside the stack.
 </p>
 
-</div>
+</section>
 
 <!-- VISUALIZATION -->
 
-<div class="card">
+<section class="card">
 
 <h2>Visualization</h2>
 
 <div class="top-label">
-
 TOP
-
 </div>
 
-<div
-id="stack"
-class="stack-container">
-
+<div id="stack" class="stack-container">
 </div>
 
-</div>
+</section>
 
 <!-- COMPLEXITY -->
 
-<div class="card">
+<section class="card">
 
 <h2>Time Complexity</h2>
 
 <table>
 
 <tr>
-
 <th>Operation</th>
-
 <th>Complexity</th>
-
 </tr>
 
 <tr>
-
 <td>Push</td>
-
 <td>O(1)</td>
-
 </tr>
 
 <tr>
-
 <td>Pop</td>
-
 <td>O(1)</td>
-
 </tr>
 
 <tr>
-
 <td>Peek</td>
-
 <td>O(1)</td>
-
 </tr>
 
 <tr>
-
 <td>Search</td>
-
 <td>O(n)</td>
-
 </tr>
 
 </table>
-<div class="theory-section">
-    <h2>Real World Applications of Stack</h2>
 
-    <ul>
-        <li><strong>Browser Back Button:</strong> Previously visited pages are stored in a stack.</li>
+</section>
 
-        <li><strong>Undo Operations:</strong> Applications like MS Word use stacks for undo functionality.</li>
+<!-- APPLICATIONS -->
 
-        <li><strong>Function Calls:</strong> Programming languages use a call stack to manage functions.</li>
+<section class="card">
 
-        <li><strong>Expression Evaluation:</strong> Calculators use stacks to evaluate expressions.</li>
+<h2>Real World Applications of Stack</h2>
 
-        <li><strong>Text Editors:</strong> Undo and redo operations are implemented using stacks.</li>
-    </ul>
+<ul>
+<li>Browser Back Button</li>
+<li>Undo Operations in Editors</li>
+<li>Function Call Management</li>
+<li>Expression Evaluation</li>
+<li>Text Editor Undo/Redo</li>
+</ul>
 
-    <h2>Java Syntax</h2>
+</section>
+
+<!-- JAVA SYNTAX -->
+
+<section class="card">
+
+<h2>Java Syntax</h2>
 
 <pre>
 Stack<Integer> stack = new Stack<>();
@@ -248,21 +202,14 @@ stack.push(30);
 
 stack.pop();
 </pre>
-</div>
 
-<!-- FOOTER -->
+</section>
 
-    <footer>
-
-        <p>
-            Made with ❤️ by Vaishnavi M & Shivani Stalin
-        </p>
-
-    </footer>
-
+<footer>
+<p>DSA Visualizer • Stack Module</p>
+</footer>
 
 <script src="stack.js"></script>
 
 </body>
-
 </html>

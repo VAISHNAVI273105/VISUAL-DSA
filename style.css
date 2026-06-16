@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* RESET */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
 }
+
+/* BODY */
 
 body{
     min-height:100vh;
@@ -15,97 +21,289 @@ body{
     );
 }
 
-/* HERO */
+/* HERO SECTION */
 
 .hero{
+    padding:90px 20px 70px;
     text-align:center;
-    padding:80px 20px;
 }
 
 .hero-content{
-    max-width:800px;
+    max-width:850px;
     margin:auto;
+
+    background:rgba(255,255,255,0.65);
+
+    backdrop-filter:blur(10px);
+
+    padding:40px;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
 }
 
 .hero h3{
     color:#0284c7;
-    font-size:1.2rem;
+    font-size:1rem;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
     margin-bottom:15px;
 }
 
 .hero h1{
-    font-size:4rem;
+    font-size:4.5rem;
     color:#0369a1;
-    margin-bottom:15px;
+    margin-bottom:20px;
+    font-weight:700;
 }
 
 .hero p{
     font-size:1.15rem;
     color:#475569;
     line-height:1.8;
+    max-width:650px;
+    margin:auto;
 }
 
-/* CARDS */
+/* MAIN CONTAINER */
 
 .container{
-    max-width:1200px;
+    max-width:1300px;
     margin:auto;
-    padding:20px;
+    padding:20px 25px 50px;
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
     gap:30px;
 }
 
+/* COMMON CARD */
+
 .card{
-    background:white;
     text-decoration:none;
-    padding:35px 25px;
-    border-radius:25px;
     text-align:center;
-    transition:0.4s;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+    padding:35px 25px;
+
+    border-radius:25px;
+
+    transition:all 0.35s ease;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.08);
+
+    border:1px solid rgba(255,255,255,0.5);
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 35px rgba(2,132,199,0.25);
+    transform:
+    translateY(-10px)
+    scale(1.02);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.12);
 }
+
+/* ICON */
 
 .icon{
-    font-size:3rem;
-    margin-bottom:15px;
+    font-size:3.2rem;
+    margin-bottom:18px;
+    transition:0.3s;
 }
+
+.card:hover .icon{
+    transform:scale(1.15);
+}
+
+/* TITLE */
 
 .card h2{
-    color:#0284c7;
-    margin-bottom:10px;
+    margin-bottom:12px;
+    font-size:1.5rem;
+    font-weight:600;
 }
 
+/* DESCRIPTION */
+
 .card p{
+    line-height:1.7;
+    font-size:0.95rem;
     color:#64748b;
-    line-height:1.6;
 }
+
+/* ARRAY */
+
+.array-card{
+    background:#e0f2fe;
+}
+
+.array-card h2{
+    color:#0284c7;
+}
+
+.array-card:hover{
+    background:#d4ecfc;
+}
+
+/* STACK */
+
+.stack-card{
+    background:#f3e8ff;
+}
+
+.stack-card h2{
+    color:#7b2cbf;
+}
+
+.stack-card:hover{
+    background:#eadcff;
+}
+
+/* QUEUE */
+
+.queue-card{
+    background:#ffe4ec;
+}
+
+.queue-card h2{
+    color:#d63384;
+}
+
+.queue-card:hover{
+    background:#ffd8e4;
+}
+
+/* STRING */
+
+.string-card{
+    background:#fff0f0;
+}
+
+.string-card h2{
+    color:#d62828;
+}
+
+.string-card:hover{
+    background:#ffe4e4;
+}
+
+/* STRING BUILDER & BUFFER */
+
+.builder-card{
+    background:#fff9df;
+}
+
+.builder-card h2{
+    color:#c99700;
+}
+
+.builder-card:hover{
+    background:#fff4c8;
+}
+
+/* LINKED LIST */
+
+.linked-card{
+    background:#e8f5e9;
+}
+
+.linked-card h2{
+    color:#2e7d32;
+}
+
+.linked-card:hover{
+    background:#dcf1de;
+}
+
+/* ARRAYLIST */
+
+.arraylist-card{
+    background:#fff3e0;
+}
+
+.arraylist-card h2{
+    color:#ef6c00;
+}
+
+.arraylist-card:hover{
+    background:#ffe9cf;
+}
+
+
+
 
 /* FOOTER */
 
 footer{
+    margin-top:60px;
+
     text-align:center;
-    margin-top:70px;
+
     padding:25px;
+
     color:#334155;
+
     font-weight:500;
+
+    background:rgba(255,255,255,0.4);
+
+    backdrop-filter:blur(10px);
+
+    border-top:1px solid rgba(2,132,199,0.1);
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#0284c7;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+    background:#d6f0ff;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
+    .hero{
+        padding:60px 15px;
+    }
+
+    .hero-content{
+        padding:30px 20px;
+    }
+
     .hero h1{
-        font-size:2.7rem;
+        font-size:2.8rem;
     }
 
     .hero p{
         font-size:1rem;
     }
 
+    .container{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .card{
+        padding:25px;
+    }
+
+    .icon{
+        font-size:2.8rem;
+    }
 }
