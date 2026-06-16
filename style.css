@@ -9,16 +9,36 @@
     font-family:'Poppins',sans-serif;
 }
 
+/* VIDEO BACKGROUND */
+
+#bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+/* LIGHT OVERLAY */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.55);
+    z-index:-1;
+}
+
 /* BODY */
 
 body{
     min-height:100vh;
-    background:linear-gradient(
-        135deg,
-        #e6f7ff,
-        #d6f0ff,
-        #bde7ff
-    );
+    overflow-x:hidden;
 }
 
 /* HERO SECTION */
@@ -31,17 +51,11 @@ body{
 .hero-content{
     max-width:850px;
     margin:auto;
-
     background:rgba(255,255,255,0.65);
-
     backdrop-filter:blur(10px);
-
     padding:40px;
-
     border-radius:30px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.08);
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 .hero h3{
@@ -74,12 +88,8 @@ body{
     max-width:1300px;
     margin:auto;
     padding:20px 25px 50px;
-
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
 }
 
@@ -88,26 +98,16 @@ body{
 .card{
     text-decoration:none;
     text-align:center;
-
     padding:35px 25px;
-
     border-radius:25px;
-
     transition:all 0.35s ease;
-
-    box-shadow:
-    0 8px 25px rgba(0,0,0,0.08);
-
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
     border:1px solid rgba(255,255,255,0.5);
 }
 
 .card:hover{
-    transform:
-    translateY(-10px)
-    scale(1.02);
-
-    box-shadow:
-    0 20px 40px rgba(0,0,0,0.12);
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 20px 40px rgba(0,0,0,0.12);
 }
 
 /* ICON */
@@ -236,26 +236,16 @@ body{
     background:#ffe9cf;
 }
 
-
-
-
 /* FOOTER */
 
 footer{
     margin-top:60px;
-
     text-align:center;
-
     padding:25px;
-
     color:#334155;
-
     font-weight:500;
-
     background:rgba(255,255,255,0.4);
-
     backdrop-filter:blur(10px);
-
     border-top:1px solid rgba(2,132,199,0.1);
 }
 
